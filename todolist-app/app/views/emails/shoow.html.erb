@@ -1,0 +1,32 @@
+<h1>Emails#show</h1>
+<p>Find me in app/views/emails/show.html.erb</p>
+<div class="container">
+    <div class="row">
+    <%= button_to "Add email", root_path, :id => "btn-create-email",
+      :class => "btn btn-primary", :method => "create", remote: true %>
+            
+            <table id="show-email" class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">Object</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><%= @email.object %></td>
+                    </tr>
+                </tbody>
+                 <tbody>
+                    <tr>
+                        <td><%= @email.body %></td>
+                    </tr>
+                </tbody>
+
+            </table>
+             <%= button_to "supprimer", root_path, :id => "btn-create-email",
+            :class => "btn btn-danger", :method => "create", remote: true %>
+            <td><%= button_to "Marquer comme non-lu", root_path, :id => "btn-create-email",
+            :class => "btn btn-warning", :method => "create", remote: true %>
+    </div><!-- row -->
+</div><!-- container -->

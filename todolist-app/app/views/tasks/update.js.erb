@@ -1,0 +1,3 @@
+alert("On a cliquer sur le check box");
+let checkbox_id = document.querySelector("input#<%= task.id %>");
+checkbox_id.parentNode.replaceChild("<%= j render "update", status: !task.status %>", checkbox_id);

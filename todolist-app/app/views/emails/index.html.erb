@@ -1,0 +1,29 @@
+<h1>Emails#index</h1>
+<p>Find me in app/views/emails/index.html.erb</p>
+<div class="container">
+    <%= button_to "Add email", emails_path, :id => "btn-create-email",
+      :class => "btn btn-primary", :method => "create", remote: true %>
+        <div id="row-email"class="row">
+            <div id="index-email-div" class="col-6 rounded" style="border:2px solid black;">
+            <table id="table-email" class="table">
+            <thead class="thead-light">
+                <tr>
+                <th scope="col">Object</th>
+
+                </tr>
+            </thead>
+            <% @emails.each do |email| %>
+            <tbody id="tbody-<%= email.id %>">
+                <tr id="tr-email-object">
+                    <td><%=link_to email.object, email_path(email.id), :method => "get", remote: true%></td>
+                </tr>
+            </tbody>
+            <% end %>
+            </table>
+        </div><!-- col-6 -->
+       <!-- <div id="show-email-div" class="col-6 rounded" style="border:2px solid black;">
+       
+         </div><!-- col-6 -->
+       <!-- <div>hheeeello</div>-->
+    </div><!-- row -->
+</div><!-- container -->

@@ -1,0 +1,6 @@
+alert("L ajax create email a le bon chemin!");
+<%# let btnCreateEmail1 = document.querySelector("button#btn-create-email"); %>
+
+document.querySelector("#table-email").insertAdjacentHTML("afterbegin", "<%= j render "email", email: @email %> ");
+
+

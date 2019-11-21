@@ -1,0 +1,30 @@
+<div id="show-email-div" class="col-5" style="border:2px solid black;">
+    <table id="show-email" class="table">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Object</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="font-size:36px;"><%= @email.object %></td>
+            </tr>
+        </tbody>
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Body</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><%= @email.body %></td>
+            </tr>
+        </tbody>
+    </table>
+</div><!-- col-6 -->
+<div id="btn-show" class="d-flex justify-content-end">
+    <%= button_to "supprimer", email_path(@email.id), :id => "btn-create-email",
+    :class => "btn btn-danger", :method => "delete", remote: true, data: { confirm: "Are you sure?" } %>
+    <%= button_to "Marquer comme non-lu", root_path, :id => "btn-create-email",
+    :class => "btn btn-warning", :method => "create", remote: true %>
+<div>

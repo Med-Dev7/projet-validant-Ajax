@@ -1,0 +1,5 @@
+alert("Vous avez bien effacer la tache");
+let task_id = document.getElementById("<%= @task.id %>");
+task_id.addEventListener('ajax:success', function(event){
+    task_id.remove();
+});
